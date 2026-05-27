@@ -22,3 +22,4 @@ spark-warehouse/
 # Temporary files
 tmp/
 temp/
+output/

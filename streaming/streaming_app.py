@@ -60,10 +60,24 @@ clean_df = typed_df.filter(
     (col("response_size") >= 0)
 )
 
-query = clean_df.writeStream \
+raw_query = raw_df.writeStream \
+    .outputMode("append") \
+    .format("parquet") \
+    .option("path", "/user/student/log_monitoring/raw_logs") \
+    .option("checkpointLocation", "/user/student/log_monitoring/checkpoints/raw_logs") \
+    .start()
+
+processed_query = clean_df.writeStream \
+    .outputMode("append") \
+    .format("parquet") \
+    .option("path", "/user/student/log_monitoring/processed_logs") \
+    .option("checkpointLocation", "/user/student/log_monitoring/checkpoints/processed_logs") \
+    .start()
+
+console_query = clean_df.writeStream \
     .outputMode("append") \
     .format("console") \
     .option("truncate", "false") \
     .start()
 
-query.awaitTermination()
+spark.streams.awaitAnyTermination()

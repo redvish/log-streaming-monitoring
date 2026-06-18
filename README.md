@@ -183,6 +183,24 @@ hive -f sql/anomaly_queries.sql
 - количество запросов по минутам;
 - ошибки 4xx/5xx по минутам.
 
+## Результаты визуализации
+
+### Распределение HTTP-кодов
+
+![HTTP status distribution](visualization/charts/status_counts.png)
+
+### Топ URL
+
+![Top URLs](visualization/charts/url_counts.png)
+
+### Количество запросов по минутам
+
+![Requests per minute](visualization/charts/minute_requests.png)
+
+### Ошибки 4xx/5xx по минутам
+
+![Errors per minute](visualization/charts/minute_errors.png)
+
 ## Проверенный результат
 
 Проверено:

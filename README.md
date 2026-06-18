@@ -15,6 +15,8 @@
 3. Kafka Consumer отображает полученные JSON-сообщения.
 4. Spark Structured Streaming читает поток из Kafka и выводит обработанные batch-таблицы.
 
+<video src="docs/media/demo.mp4" controls width="100%"></video>
+
 Видео: [`docs/media/demo.mp4`](docs/media/demo.mp4)
 
 ## Pipeline
